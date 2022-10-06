@@ -1,0 +1,12 @@
+// vi:syntax=verilog
+// Capture array expect data, 10 locations
+@0 00_ff
+   12_ed
+   34_cb
+   56_a9
+   9a_64
+   34_c1
+   56_d2
+   9a_f4
+   78_e3
+   12_b0
