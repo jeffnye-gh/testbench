@@ -65,6 +65,8 @@ Usage is simple:
 * Have icarus verilog in your path, or modify the make file
 * make 
 * expected console output
+
+```
 mkdir -p bin
 iverilog -g2012 -s sys -I./inc          src/dut.v src/sys.v -o bin/tb
 bin/tb
@@ -73,6 +75,7 @@ TB_WAIT_STATES 0
 -I: verify init ram contents    PASS
 -I: verify capture ram contents PASS
 -I: verify final ram contents   PASS
+```
 
 * There is a sample GTKWave signal list
 * make waves
