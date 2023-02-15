@@ -51,12 +51,12 @@ initial begin
   run_tests();
 end
 // ------------------------------------------------------------------------
-// Primary test, very simple, not exhaustive
+// Primary test, very simple
 //
 // transactions implemented in tasks, see sys_tasks.h
 // some nops scattered for variety.
 //
-// Another exercise: implementat a transcript based task version
+// Another exercise: implement a transcript based task version
 // so test can be read from file, then can skip compile for test changes
 // ------------------------------------------------------------------------
 task run_tests;
@@ -64,9 +64,15 @@ begin
   nop(5);                       //add some pad at start of waves
   while(reset) @(posedge clk);  //wait for reset to deassert
 
+  //Return data is captured in capture_data/_addr. This is the index
+  //into those arrays.
   capture_idx       = 0;
 
-  ram_expect_errors = 0; //three error types init, capture, final value
+  //There are three error types init, capture, final value
+  //expected       - data errors found by comparison with golden files
+  //capture errors - problems with return data ordering or values
+  //init errors    - find issues with readmemhb and golden files,
+  ram_expect_errors = 0;
   capture_errors    = 0;
   init_errors       = 0;
 

@@ -1,16 +1,14 @@
 Copyright (c) 2022 Jeff Nye
 
-# Testbench template
+# Verilog Unit Testbench template
 
 ## TL;DR
 
-This is my template for a unit test environment. It's mostly for jogging
-my memory, I can't always get to my home machine. I cut and paste then 
-build on it depending on the unit I'm designing. It is the basis of the
-test environment in my cache generator.
+I use this for jogging my memory. This is the basis of the
+test environment for my cache generator created verilog.
 
 ## More
-This is a very simple testbench, but it has some core common features:
+A simple testbench, core common features:
 
   * self checking tests
     * readmemh based initialization
